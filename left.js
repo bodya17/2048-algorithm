@@ -1,8 +1,8 @@
-const {sumUpAndLeft} = require('./sum')
+const {getSummer} = require('./sum')
 
-const left = (gameBoard) => {
-  return gameBoard.map(sumUpAndLeft)
-}
+const sum = getSummer()
+
+const left = gameBoard => gameBoard.map(sum)
 
 const boardBefore = [
   [0, 2, 0, 0],

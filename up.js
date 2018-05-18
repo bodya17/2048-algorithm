@@ -1,11 +1,12 @@
-const {sumUpAndLeft} = require('./sum')
+const {getSummer} = require('./sum')
+
+const sum = getSummer()
 const {transpose} = require('./transpose')
 
-const up = (gameBoard) => {
+const up = gameBoard => {
   const transposed = transpose(gameBoard)
-  return transpose(transposed.map(sumUpAndLeft))
+  return transpose(transposed.map(sum))
 }
-
   
 const boardBefore = [
   [0, 0, 0, 0],

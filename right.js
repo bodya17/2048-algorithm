@@ -1,11 +1,11 @@
-const {sumDownAndRight} = require('./sum')
+const {getSummer} = require('./sum')
 
-const right = (gameBoard) => {
-  return gameBoard.map(sumDownAndRight)
-}
+const sum = getSummer({inverse: true})
+
+const right = gameBoard => gameBoard.map(sum)
 
 const boardBefore = [
-  [4, 0, 0, 0],
+  [4, 2, 0, 4],
   [2, 0, 2, 0],
   [4, 4, 4, 2],
   [8, 32, 16, 8],
@@ -14,7 +14,7 @@ const boardBefore = [
 console.log(right(boardBefore))
 
 const boardAfter = [
-  [0, 0, 0, 4],
+  [0, 4, 2, 4],
   [0, 0, 0, 4],
   [0, 4, 8, 2],
   [8, 32, 16, 8],

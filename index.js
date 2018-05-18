@@ -8,14 +8,19 @@ const gameBoard = [
   [0, 0, 0, 0]
 ]
 
-const generateRandomIndecies = () => {
-  const x = Math.floor(Math.random() * width)
-  const y = Math.floor(Math.random() * height)
-  return [x, y]
+const addNumber = gameBoard => {
+  const emptySpots = []
+  for (let i = 0; i < width; i++) {
+    for (let j = 0; j < height; j++) {
+      if (gameBoard[i][j] === 0) emptySpots.push({x: i, y: j})
+    }
+  }
+  const randomSpot = emptySpots[Math.floor(Math.random() * emptySpots.length)]
+  const {x, y} = randomSpot
+  gameBoard[x][y] = 2
 }
 
-const [x, y] = generateRandomIndecies()
-gameBoard[x][y] = 2
+addNumber(gameBoard)
 
 console.log(gameBoard)
 
